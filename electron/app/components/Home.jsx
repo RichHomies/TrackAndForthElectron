@@ -1,3 +1,5 @@
+import ChatView from './ChatView'
+
 class Home extends React.Component {
   constructor(props) {
     super(props)
@@ -5,7 +7,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <h1>In the Home Component</h1>
+        <ChatView />
       </div>
       )
   }

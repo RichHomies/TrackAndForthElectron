@@ -9,9 +9,18 @@
   <body>
     <div id="content"></div>
   </body>
+  <script src='http://127.0.0.1:8081/socket.io/socket.io.js'></script>
   <script>
     require('babel/register');
     var React = require('react');
+    var Promise = require("bluebird")
+    var socket = io.connect('http://127.0.0.1:8081')
+    var connectToSocketOnServer = new Promise(function(resolve, reject){
+      socket.on('connect',function(){
+        console.log('connected to socket!')
+        resolve('connected!')
+      })
+    });
     var Main = require('../app/main.jsx');
   </script>
 </html>
